@@ -1,21 +1,69 @@
+/*
+
+  This CSS file defines global styles for the simple calculator application.
+
+  Tailwind Directives:
+  - @tailwind base: Includes Tailwind's base styles.
+  - @tailwind components: Includes Tailwind's component styles.
+  - @tailwind utilities: Includes Tailwind's utility classes.
+
+  CSS Variables:
+  - :root: Defines the default light theme colors.
+    - --background: Softer light background color.
+    - --foreground: Foreground text color.
+    - --button-bg: Default button background color.
+    - --button-bg-hover: Button background color on hover.
+    - --button-text: Button text color.
+
+  - .dark: Defines the dark theme colors.
+    - --background: Dark background color.
+    - --foreground: Foreground text color for dark theme.
+    - --button-bg: Button background color for dark theme.
+    - --button-bg-hover: Button background color on hover for dark theme.
+    - --button-text: Button text color for dark theme.
+
+  Global Styles:
+  - body: Sets the text color, background color, font family, and disables vertical scrolling.
+  - button: Styles for buttons including background color, text color, border, padding, border-radius, cursor, and transition effect.
+  - button:hover: Changes the button background color on hover.
+*/
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: #beb9b9; /* Softer light background */
   --foreground: #171717;
+  --button-bg: #e0e0e0;
+  --button-bg-hover: #d0d0d0;
+  --button-text: #000000;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+  --background: #171717;
+  --foreground: #ffffff;
+  --button-bg: #333333;
+  --button-bg-hover: #444444;
+  --button-text: #ffffff;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  overflow-y: hidden;
+}
+
+button {
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: var(--button-bg-hover);
 }
